@@ -1,0 +1,103 @@
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, Scissors } from "lucide-react";
+import { Link } from "react-router-dom";
+
+export const Footer = () => {
+  return (
+    <footer className="bg-salon-black border-t border-salon-yellow/20 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Brand Section */}
+          <div className="col-span-1 lg:col-span-2">
+            <Link to="/" className="flex items-center space-x-2 mb-6">
+              <div className="bg-salon-yellow p-2 rounded-lg">
+                <Scissors className="h-6 w-6 text-salon-black" />
+              </div>
+              <span className="text-2xl font-bold text-salon-yellow">Sachin Salon</span>
+            </Link>
+            <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
+              Experience the epitome of luxury and style at Sachin Salon. We're committed to enhancing your natural beauty through our premium unisex services and personalized care.
+            </p>
+            
+            {/* Social Media */}
+            <div className="flex space-x-4">
+              <a href="#" className="bg-salon-yellow/10 p-3 rounded-full hover:bg-salon-yellow hover:text-salon-black transition-all duration-300 text-salon-yellow">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="bg-salon-yellow/10 p-3 rounded-full hover:bg-salon-yellow hover:text-salon-black transition-all duration-300 text-salon-yellow">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="bg-salon-yellow/10 p-3 rounded-full hover:bg-salon-yellow hover:text-salon-black transition-all duration-300 text-salon-yellow">
+                <Twitter className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
+            <ul className="space-y-3">
+              {[
+                { name: "Home", path: "/" },
+                { name: "Services", path: "/services" },
+                { name: "Membership", path: "/membership" },
+                { name: "About Us", path: "/about" },
+                { name: "Gallery", path: "/gallery" },
+                { name: "Contact", path: "/contact" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    to={link.path}
+                    className="text-gray-300 hover:text-salon-yellow transition-colors duration-300"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-xl font-bold text-white mb-6">Contact Info</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-salon-yellow mt-1 flex-shrink-0" />
+                <span className="text-gray-300">
+                  123 Beauty Street, Fashion District, Mumbai - 400001
+                </span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-salon-yellow flex-shrink-0" />
+                <span className="text-gray-300">+91 98765 43210</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-salon-yellow flex-shrink-0" />
+                <span className="text-gray-300">info@sachinsalon.com</span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <Clock className="w-5 h-5 text-salon-yellow mt-1 flex-shrink-0" />
+                <div className="text-gray-300">
+                  <p>Mon - Sat: 9:00 AM - 9:00 PM</p>
+                  <p>Sunday: 10:00 AM - 7:00 PM</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-salon-yellow/20 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2024 Sachin Salon. All rights reserved. Designed with ❤️ for premium beauty experiences.
+            </p>
+            <div className="flex space-x-6 text-sm text-gray-400">
+              <a href="#" className="hover:text-salon-yellow transition-colors duration-300">Privacy Policy</a>
+              <a href="#" className="hover:text-salon-yellow transition-colors duration-300">Terms of Service</a>
+              <a href="#" className="hover:text-salon-yellow transition-colors duration-300">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
